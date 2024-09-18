@@ -16,3 +16,7 @@
 # Add a feed source
 echo 'src-git smpackage https://github.com/kenzok8/small-package' >>feeds.conf.default
 #echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
+
+#更改TL-WDR7500闪存大小
+sed -i 's/0x7d0000/0xfd0000/g;s/7f0000/ff0000/g' /target/linux/ath79/qca9558_tplink_tl-wdr7500-v3.dts
+sed -i '621s/8/16/' /target/linux/ath79/image/generic-tp-link.mk
