@@ -65,10 +65,10 @@ jobs:
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH
 
-    - name: Update feeds
+    - name: 更新软件包
       run: cd openwrt && ./scripts/feeds update -a
 
-    - name: Install feeds
+    - name: 安装软件包
       run: cd openwrt && ./scripts/feeds install -a
 
     - name: 加载diy-part2.sh自定义配置
@@ -84,7 +84,7 @@ jobs:
       if: env.SSH_ACTIONS == 'true' || contains(github.event.action, 'ssh')
 
 
-    - name: 下载软件包
+    - name: 下载编译依赖dll
       id: package
       run: |
         cd openwrt
