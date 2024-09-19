@@ -22,3 +22,6 @@
 #更改TL-WDR7500闪存大小
 sed -i 's/0x7d0000/0xfd0000/g;s/7f0000/ff0000/g' target/linux/ath79/dts/qca9558_tplink_tl-wdr7500-v3.dts
 sed -i '621s/8/16/' target/linux/ath79/image/generic-tp-link.mk
+
+#删除冲突的插件
+rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd*,miniupnpd-iptables,wireless-regdb}
