@@ -114,9 +114,9 @@ jobs:
 
     - name: 上传dl文件夹在github空间
       uses: actions/upload-artifact@main
-      if: steps.compile.outputs.status == 'success' && env.UPLOAD_DL_DIR == 'true'
+      if: steps.organize.outputs.status == 'success' && env.UPLOAD_DL_DIR == 'true'
       with:
-        name: OpenWrt_bin${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
+        name: OpenWrt_dl${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
         path: openwrt/dl
 
 
