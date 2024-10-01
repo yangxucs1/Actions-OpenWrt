@@ -10,7 +10,7 @@
 # See /LICENSE for more information.
 #
 
-name: OpenWrt固件编译
+name: 编译tl-wr886n_v4_16M固件
 
 on:
   repository_dispatch:
