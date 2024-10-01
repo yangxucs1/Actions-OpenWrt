@@ -15,5 +15,5 @@ sed -i 's/"green:system/"white:system/g' target/linux/ath79/dts/tp9343_tplink_tl
 sed -i 's/<&gpio 14 GPIO_ACTIVE_LOW>/<&gpio 2 GPIO_ACTIVE_LOW>/g' target/linux/ath79/dts/tp9343_tplink_tl-wr940n-v3.dtsi
 sed -i 's/<&gpio 7 GPIO_ACTIVE_LOW>/<&gpio 4 GPIO_ACTIVE_LOW>/g' target/linux/ath79/dts/tp9343_tplink_tl-wr940n-v3.dtsi
 sed -i 's/<&gpio 6 GPIO_ACTIVE_LOW>/<&gpio 5 GPIO_ACTIVE_LOW>/g' target/linux/ath79/dts/tp9343_tplink_tl-wr940n-v3.dtsi
-sed -i 's/<&gpio 5 GPIO_ACTIVE_LOW>/<&gpio 6 GPIO_ACTIVE_LOW>/g' target/linux/ath79/dts/tp9343_tplink_tl-wr940n-v3.dtsi
-sed -i 's/<&gpio 4 GPIO_ACTIVE_LOW>/<&gpio 7 GPIO_ACTIVE_LOW>/g' target/linux/ath79/dts/tp9343_tplink_tl-wr940n-v3.dtsi
+sed -i 's/5 GPIO/6 GPIO>/g' target/linux/ath79/dts/tp9343_tplink_tl-wr940n-v3.dtsi
+sed -i 's/4 GPIO/7 GPIO/g' target/linux/ath79/dts/tp9343_tplink_tl-wr940n-v3.dtsi
