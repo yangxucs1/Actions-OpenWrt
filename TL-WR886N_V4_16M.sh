@@ -10,8 +10,8 @@ sed -i 's/ucidef_set_interface_wan "eth1";/ucidef_set_interfaces_lan_wan "eth0" 
 sed -i 's/" "blue:/" "green:/g' target/linux/ath79/tiny/base-files/etc/board.d/01_leds
 
 ##### 修改GPIO #####
-sed -i 's/" "blue:/" "green:/g' target/linux/ath79/dts/tp9343_tplink_tl-wr940n-v3.dtsi
-sed -i 's/green:system/white:system/g' target/linux/ath79/dts/tp9343_tplink_tl-wr940n-v3.dtsi
+sed -i 's/"blue:/"green:/g' target/linux/ath79/dts/tp9343_tplink_tl-wr940n-v3.dtsi
+sed -i 's/"green:system/"white:system/g' target/linux/ath79/dts/tp9343_tplink_tl-wr940n-v3.dtsi
 sed -i 's/gpios = <&gpio 14 GPIO_ACTIVE_LOW>/gpios = <&gpio 2 GPIO_ACTIVE_LOW>/g' target/linux/ath79/dts/tp9343_tplink_tl-wr940n-v3.dtsi
 sed -i 's/gpios = <&gpio 7 GPIO_ACTIVE_LOW>/gpios = <&gpio 4 GPIO_ACTIVE_LOW>/g' target/linux/ath79/dts/tp9343_tplink_tl-wr940n-v3.dtsi
 sed -i 's/gpios = <&gpio 6 GPIO_ACTIVE_LOW>/gpios = <&gpio 5 GPIO_ACTIVE_LOW>/g' target/linux/ath79/dts/tp9343_tplink_tl-wr940n-v3.dtsi
