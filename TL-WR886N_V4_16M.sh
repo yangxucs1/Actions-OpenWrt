@@ -4,7 +4,7 @@ sed -i 's/<0x020000 0x3d0000>/<0x020000 0xfd0000>/g' target/linux/ath79/dts/tp93
 sed -i 's/<0x3f0000 0x010000>/<0xff0000 0x010000>/g' target/linux/ath79/dts/tp9343_tplink_tl-wx.dtsi
 
 ##### 修改交换机网口 #####
-sed -i 's/ucidef_set_interface_wan "eth1";/ucidef_set_interfaces_lan_wan "eth0" "eth1";/g' target/linux/ath79/tiny/base-files/etc/board.d/02_network
+sed -i 's/ucidef_set_interface_wan "eth1"/ucidef_set_interfaces_lan_wan "eth0" "eth1"/g' target/linux/ath79/tiny/base-files/etc/board.d/02_network
 
 ##### 修改网口指示灯 #####
 sed -i 's/" "blue:/" "green:/g' target/linux/ath79/tiny/base-files/etc/board.d/01_leds
