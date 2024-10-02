@@ -12,8 +12,8 @@ sed -i 's/" "blue:/" "green:/g' target/linux/ath79/tiny/base-files/etc/board.d/0
 ##### 修改GPIO #####
 sed -i 's/blue/green/g' target/linux/ath79/dts/tp9343_tplink_tl-wr940n-v3.dtsi
 sed -i 's/"green:system/"white:system/g' target/linux/ath79/dts/tp9343_tplink_tl-wr940n-v3.dtsi
-sed -i '/label = "green:wan"/{n;s/14/2/;}' target/linux/ath79/dts/tp9343_tplink_tl-wr940n-v3.dtsi
-sed -i '/label = "green:lan1"/{n;s/7/4/;}' target/linux/ath79/dts/tp9343_tplink_tl-wr940n-v3.dtsi
-sed -i '/label = "green:lan2"/{n;s/6/5/;}' target/linux/ath79/dts/tp9343_tplink_tl-wr940n-v3.dtsi
-sed -i '/label = "green:lan3"/{n;s/5/6/;}' target/linux/ath79/dts/tp9343_tplink_tl-wr940n-v3.dtsi
-sed -i '/label = "green:lan4"/{n;s/4/7/;}' target/linux/ath79/dts/tp9343_tplink_tl-wr940n-v3.dtsi
+sed -i 's/label = "green:wan"/{n;s/14/2/;}' target/linux/ath79/dts/tp9343_tplink_tl-wr940n-v3.dtsi
+sed -i 's/label = "green:lan1"/{n;s/7/4/;}' target/linux/ath79/dts/tp9343_tplink_tl-wr940n-v3.dtsi
+sed -i 's/label = "green:lan2"/{n;s/6/5/;}' target/linux/ath79/dts/tp9343_tplink_tl-wr940n-v3.dtsi
+sed -i 's/label = "green:lan3"/{n;s/5/6/;}' target/linux/ath79/dts/tp9343_tplink_tl-wr940n-v3.dtsi
+sed -i 's/label = "green:lan4"/{n;s/4/7/;}' target/linux/ath79/dts/tp9343_tplink_tl-wr940n-v3.dtsi
