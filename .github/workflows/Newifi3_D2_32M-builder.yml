@@ -21,8 +21,8 @@ env:
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: Newifi3_D2_32M.config
-  DIY_P1_SH: diy-part1.sh
-  DIY_P2_SH: Newifi3_D2_32M.sh
+  #DIY_P1_SH: diy-part1.sh
+  #DIY_P2_SH: Newifi3_D2_32M.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: false
@@ -82,19 +82,19 @@ jobs:
     - name: 更新软件包
       run: cd openwrt && ./scripts/feeds update -a
 
-    - name: 安装软件包前删除冲突的插件
-      run: cd openwrt && sudo rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd*,miniupnpd-iptables,wireless-regdb}
+    #- name: 安装软件包前删除冲突的插件
+      #run: cd openwrt && sudo rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd*,miniupnpd-iptables,wireless-regdb}
 
     - name: 安装软件包
       run: cd openwrt && ./scripts/feeds install -a
 
-    - name: 加载diy-part2.sh自定义配置
-      run: |
-        [ -e files ] && mv files openwrt/files
-        [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
-        chmod +x $DIY_P2_SH
-        cd openwrt
-        $GITHUB_WORKSPACE/$DIY_P2_SH
+    #- name: 加载diy-part2.sh自定义配置
+      #run: |
+        #[ -e files ] && mv files openwrt/files
+        #[ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
+        #chmod +x $DIY_P2_SH
+        #cd openwrt
+        #$GITHUB_WORKSPACE/$DIY_P2_SH
 
     #- name: SSH远程连接服务器配置固件
       #uses: csexton/debugger-action@master
