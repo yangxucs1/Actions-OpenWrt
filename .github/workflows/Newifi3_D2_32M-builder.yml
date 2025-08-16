@@ -16,10 +16,14 @@ on:
   repository_dispatch:
   workflow_dispatch:
     inputs:
-      ssh:
-        description: 'SSH connection to Actions'
+      enable_ssh:
+        description: "Enable SSH debugging (true/false)"
         required: true
-        default: 'false'
+        default: "false"
+        type: choice
+        options:
+          - "true"
+          - "false"
   
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
@@ -87,8 +91,8 @@ jobs:
         #$GITHUB_WORKSPACE/$DIY_P2_SH
 
     - name: SSH远程连接服务器配置固件
-      uses: P3TERX/ssh2actions@v1.0.0
-      if: env.SSH_ACTIONS == 'true' || contains(github.event.action, 'ssh')
+      uses: mxschmitt/action-tmate@v3
+      if: ${{ github.event.inputs.enable_ssh == 'true' }}
 
     - name: 下载编译依赖dll
       id: package
