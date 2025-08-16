@@ -95,7 +95,9 @@ jobs:
       with:
         limit-access-to-actor: false  # 关闭权限限制（不推荐）
       if: ${{ github.event.inputs.enable_ssh == 'true' }}
-
+#当出现类似“ssh Y26QeagDtsPXp2mT6me5cnMRd@nyc1.tmate.io”字样时，复制 SSH 连接命令粘贴到终端内执行，或者复制链接在浏览器中打开使用网页终端。
+#然后输入：cd openwrt && make menuconfig
+#完成后按Ctrl+D组合键或执行exit命令退出，后续编译工作将自动进行。
     - name: 下载编译依赖dll
       id: package
       run: |
