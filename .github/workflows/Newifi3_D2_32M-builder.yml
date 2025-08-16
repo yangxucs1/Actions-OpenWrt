@@ -81,11 +81,9 @@ jobs:
         #cd openwrt
         #$GITHUB_WORKSPACE/$DIY_P2_SH
 
-# 启动 tmate 并等待 SSH 连接
-    - name: Setup tmate session
-      uses: mxschmitt/action-tmate@v3
-      with:
-        limit-access-to-actor: true  # 仅允许触发工作流的用户访问
+    - name: SSH远程连接服务器配置固件
+      uses: csexton/debugger-action@master
+      if: env.SSH_ACTIONS == 'true' || contains(github.event.action, 'ssh')
 
     - name: 下载编译依赖dll
       id: package
