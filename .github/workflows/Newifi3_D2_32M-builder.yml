@@ -96,9 +96,9 @@ jobs:
         #cd openwrt
         #$GITHUB_WORKSPACE/$DIY_P2_SH
 
-    #- name: SSH远程连接服务器配置固件
-      #uses: csexton/debugger-action@master
-      #if: env.SSH_ACTIONS == 'true' || contains(github.event.action, 'ssh')
+    - name: SSH远程连接服务器配置固件
+      uses: csexton/debugger-action@master
+      if: env.SSH_ACTIONS == 'true' || contains(github.event.action, 'ssh')
 
 
     - name: 下载编译依赖dll
