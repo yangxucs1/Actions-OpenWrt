@@ -92,6 +92,8 @@ jobs:
 
     - name: SSH远程连接服务器配置固件
       uses: mxschmitt/action-tmate@v3
+      with:
+        limit-access-to-actor: false  # 关闭权限限制（不推荐）
       if: ${{ github.event.inputs.enable_ssh == 'true' }}
 
     - name: 下载编译依赖dll
